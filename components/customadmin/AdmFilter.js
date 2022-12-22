@@ -1,5 +1,6 @@
-const AdmFilter = ({dept, setDept, lv, setLv, sem, setSem, search, setSearch}) => {
-    
+import AddCourse from "./AddCourse"
+
+const AdmFilter = ({dept, setDept, lv, setLv, sem, setSem, search, setSearch, AddNewCourse, cuz, setCuz}) => {
     
     
   return (
@@ -10,6 +11,7 @@ const AdmFilter = ({dept, setDept, lv, setLv, sem, setSem, search, setSearch}) =
         <div className="col-md-6 d-flex">
             <select className='form-control' value={dept} onChange={(e)=> setDept(e.target.value)} style={{"width":"5rem"}}>
                 <option value="">Dept</option>
+                <option value="general">General</option>
                 <option value="Civil And Environmental Engineering">CEE</option>
                 <option value="Aeronautic Engineering">AEE</option>
                 <option value="Food and Biological Engineering">FAB</option>
@@ -31,6 +33,7 @@ const AdmFilter = ({dept, setDept, lv, setLv, sem, setSem, search, setSearch}) =
                 <option value="rain">Rain</option>
                 
             </select>&nbsp;&nbsp;
+            <AddCourse AddNewCourse={AddNewCourse} cuz={cuz} setCuz={setCuz} />
         </div>
     </div>
   )

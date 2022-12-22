@@ -5,6 +5,7 @@ import Layout from '../components/general/Layout'
 import {  useEffect } from 'react'
 import {UserProvider} from '@auth0/nextjs-auth0/client'
 import { PdfProvider } from '../context/PdfState'
+import { LayoutProvider } from '../context/layoutState'
 
 
 function MyApp({ Component, pageProps }){
@@ -14,11 +15,13 @@ function MyApp({ Component, pageProps }){
     return (
       <ChakraProvider>
         <PdfProvider>
+          <LayoutProvider>
             <UserProvider>
               <Layout>
                 <Component {...pageProps} />
               </Layout>
             </UserProvider>
+          </LayoutProvider>
         </PdfProvider>
       </ChakraProvider> 
       

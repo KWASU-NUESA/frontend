@@ -9,7 +9,6 @@ import {
 import { urlFor } from '../../lib/sanity';
 
 export default function EachStaff({staff}) {
-console.log(staff)
   return (
     <Center py={3}>
       <Box

@@ -3,7 +3,6 @@ import SingleMaterial from '../components/materials/SingleMaterial'
 
 const course = ({course}) => {
     const {questions, textbooks} = course
-    console.log(textbooks)
   return (
     <div className='container mt-5'>
         <Tabs isFitted variant='enclosed'>
@@ -36,7 +35,7 @@ const course = ({course}) => {
                             <AlertIcon />
                             <AlertDescription>No Past Questions. The sadness!</AlertDescription>
                         </Alert>
-                         : <>{questions.map((text, key) =><div className="col-md-4" key={key}>
+                         : <>{questions.map ((text, key) =><div className="col-md-4" key={key}>
                              <SingleMaterial text={text} /> 
                             </div>)}</>
                         }
@@ -50,9 +49,8 @@ const course = ({course}) => {
   )
 }
 
-export default course
 
-export const getServerSideProps = async(context) => {
+    export const getStaticProps = async(context) => {
     const res = await fetch(process.env.NEXT_PUBLIC_API_URI+`pdf/${context.params.courseid}`, {
         headers:{
           token: process.env.NEXT_PUBLIC_TOKEN
@@ -65,3 +63,19 @@ export const getServerSideProps = async(context) => {
         }
       }
 }
+
+export const getStaticPaths = async () => {
+    const res = await fetch(process.env.NEXT_PUBLIC_API_URI+'pdf', {
+        headers:{
+          token: process.env.NEXT_PUBLIC_TOKEN
+        }
+      })
+      const pdfs = await res.json()
+      const paths = pdfs.map(course => ({params:{courseid: (course._id).toString()}}))
+      return {
+        paths,
+        fallback:false
+      }
+}
+
+export default course

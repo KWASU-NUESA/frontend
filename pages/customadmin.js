@@ -1,35 +1,44 @@
 import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0/client"
+import { useColorModeValue } from "@chakra-ui/react"
+import { useContext } from "react"
 import { useState, useEffect } from "react"
 import AdmFilter from "../components/customadmin/AdmFilter"
+import LayoutContext from "../context/layoutState"
 
 
 const customadmin = ({courses}) => {
+  const [cuz, setCuz] = useState(courses)
+  const {user, isLoading} = useUser()
+  const {setLay} = useContext(LayoutContext)
   const [dept, setDept] = useState("")
     const [sem, setSem] = useState("")
     const [lv, setLv] = useState("")
     const [search, setSearch] = useState("")
-    const FilteredCourses = courses.filter(course => ((course.department === "" ? "" : course.department).toLowerCase()).includes(dept.toLowerCase()) && ((course.semester).toLowerCase()).includes(sem.toLowerCase()) && ((course.level).toString()).includes(lv.toString()) && ((course.courseName).toLowerCase()).includes(search.toString()))
+    const FilteredCourses = cuz.filter(course => ((course.department === "" ? "" : course.department).toLowerCase()).includes(dept.toLowerCase()) && ((course.semester).toLowerCase()).includes(sem.toLowerCase()) && ((course.level).toString()).includes(lv.toString()) && ((course.courseName).toLowerCase()).includes(search.toString()))
     
   const AddNewPdf = async(body) => {
     const res = await fetch(process.env.NEXT_PUBLIC_API_URI+'pdf', {
     headers:{
       token: process.env.NEXT_PUBLIC_TOKEN,
-      body
+      "Content-Type":"application/json"
     },
+    body,
     method: 'POST'
   })
   const mat = await res.json()
   return mat
   }
-  const {user, isLoading} = useUser()
+  useEffect(()=>{
+    setLay(false)
+  })
 
   
   return (
     <div>
       <div className="container pt-5">
-      <AdmFilter dept={dept} setDept={setDept} sem={sem} setSem={setSem} lv={lv} setLv={setLv} search={search} setSearch={setSearch} />
+      <AdmFilter AddNewCourse={AddNewPdf} cuz={cuz} setCuz={setCuz} dept={dept} setDept={setDept} sem={sem} setSem={setSem} lv={lv} setLv={setLv} search={search} setSearch={setSearch} />
 
-        <table className="table">
+        <table className="table" style={{"color": useColorModeValue('black', 'white')}}>
           <thead>
             <tr>
               <td>S/N</td>

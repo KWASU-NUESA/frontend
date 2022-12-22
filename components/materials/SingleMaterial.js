@@ -13,7 +13,6 @@ export default function SingleMaterial({text}) {
   const saveFile = ()=> {
     saveAs(`${process.env.NEXT_PUBLIC_API_URI}pdfs/${text}`, text)
   }
-  console.log(process.env.NEXT_PUBLIC_API_URI,text)
   return (
     <Center py={1}>
       <Box
