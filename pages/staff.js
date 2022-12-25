@@ -7,6 +7,9 @@ import { sanityClient } from "../lib/sanity"
 const staffQuery = '*[_type == "staffData"]{_id, fullname, image, slug, position, email, gender, stage, type}'
 
 const Staff = ({staff}) => {
+  const academic = staff.filter(data => (data.category).toLowerCase() === 'academic')
+  const nonacademic = staff.filter(data => (data.category).toLowerCase() === 'non academic')
+  const executive = staff.filter(data => (data.category).toLowerCase() === 'executive')
   return (
     <>
     <Head>
@@ -15,7 +18,17 @@ const Staff = ({staff}) => {
     <main className="container">
       <StaHeader />
       <div className="row">
-        {staff.map(sta => (
+        {academic && academic.map(sta => (
+          <div className="col-md-4">
+            <EachStaff staff={sta} />
+          </div>
+      ))}
+        {nonacademic && nonacademic.map(sta => (
+          <div className="col-md-4">
+            <EachStaff staff={sta} />
+          </div>
+      ))}
+        {executive && executive.map(sta => (
           <div className="col-md-4">
             <EachStaff staff={sta} />
           </div>

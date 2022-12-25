@@ -29,11 +29,10 @@ const Pdfs = ({courses}) => {
         </div>
         }
         <div className="row">
-          {FilteredCourses.map(data => {
+          {FilteredCourses.map((data) => {
             return (
-              <div className="col-md-4">
+              <div className="col-md-4" key={data._id}>
                 <Card
-                  key={data._id}
                   course={data}
                 />
               </div>

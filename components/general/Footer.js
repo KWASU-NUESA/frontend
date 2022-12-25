@@ -46,7 +46,7 @@ import {
               </Stack>
               <Link href={'#'}>Waitlist</Link>
               <Link href={'#'}>Terms and conditions</Link>
-              <Link href={'#'}>More info</Link>
+              <Link href={'#'}>Programs</Link>
             </Stack>
             <Stack align={'flex-start'}>
               <ListHeader>Organization</ListHeader>

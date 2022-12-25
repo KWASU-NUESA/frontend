@@ -11,7 +11,7 @@ import {
   } from '@chakra-ui/react'
 import { useRef, useState } from 'react'
 
-function AddCourse({AddNewCourse, cuz, setCuz}) {
+function AddCourse({AddNewCourse, setCuz}) {
     const [courseName, setCourseName] = useState("")
     const [courseCode, setCourseCode] = useState("")
     const [dept, setDept] = useState("general")

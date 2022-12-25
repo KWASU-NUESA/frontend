@@ -33,7 +33,7 @@ export default function MatHeader() {
             fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
             lineHeight={'110%'}>
             Download Courses for<br />
-            <Text as={'span'} color={'aqua'}>
+            <Text as={'span'} color={'green.500'}>
               all Departments
             </Text>
           </Heading>
@@ -47,19 +47,16 @@ export default function MatHeader() {
             align={'center'}
             alignSelf={'center'}
             position={'relative'}>
-            <Button
+            <Link href={'#main'}><Button
               colorScheme={'aqua'}
-              bg={'aqua'}
+              bg={'green.500'}
               rounded={'full'}
               px={6}
               _hover={{
-                bg: 'green.500',
+                bg: 'green.300',
               }}>
-                <Link href={'#main'}> Download Now</Link>
-            </Button>
-            <Button variant={'link'} colorScheme={'blue'} size={'sm'}>
-              Learn more
-            </Button>
+                 Download Now
+            </Button></Link>
             <Box>
               <Icon
                 as={Arrow}

@@ -3,6 +3,7 @@ import { useColorModeValue } from "@chakra-ui/react"
 import { useContext } from "react"
 import { useState, useEffect } from "react"
 import AdmFilter from "../components/customadmin/AdmFilter"
+import UpdateCourse from "../components/customadmin/UpdateCourse"
 import LayoutContext from "../context/layoutState"
 
 
@@ -14,7 +15,7 @@ const customadmin = ({courses}) => {
     const [sem, setSem] = useState("")
     const [lv, setLv] = useState("")
     const [search, setSearch] = useState("")
-    const FilteredCourses = cuz.filter(course => ((course.department === "" ? "" : course.department).toLowerCase()).includes(dept.toLowerCase()) && ((course.semester).toLowerCase()).includes(sem.toLowerCase()) && ((course.level).toString()).includes(lv.toString()) && ((course.courseName).toLowerCase()).includes(search.toString()))
+    const FilteredCourses = cuz.filter(course => ((course.department === "" ? "" : course.department).toLowerCase()).includes(dept.toLowerCase()) && ((course.semester).toLowerCase()).includes(sem.toLowerCase()) && ((course.level).toString()).includes(lv.toString()) && ((course.courseName).toLowerCase()).includes(search.toString())).reverse()
     
   const AddNewPdf = async(body) => {
     const res = await fetch(process.env.NEXT_PUBLIC_API_URI+'pdf', {
@@ -24,6 +25,19 @@ const customadmin = ({courses}) => {
     },
     body,
     method: 'POST'
+  })
+  const mat = await res.json()
+  return mat
+  }
+
+  const UpdatePdf = async(body) => {
+    const res = await fetch(process.env.NEXT_PUBLIC_API_URI+'pdf', {
+    headers:{
+      token: process.env.NEXT_PUBLIC_TOKEN,
+      "Content-Type":"application/json"
+    },
+    body,
+    method: 'PUT'
   })
   const mat = await res.json()
   return mat
@@ -53,7 +67,7 @@ const customadmin = ({courses}) => {
           </thead>
           <tbody>
             {
-              FilteredCourses.map(({courseCode, courseName, questions, textbooks, department, semester, level}, key) => 
+              FilteredCourses.map(({courseCode, courseName, questions, textbooks, department, semester, level, _id}, key) => 
                 <tr key={key}>
                   <td>{key+1}</td>
                   <td>{courseCode}</td>
@@ -61,8 +75,8 @@ const customadmin = ({courses}) => {
                   <td>{department}</td>
                   <td>{semester}</td>
                   <td>{level}</td>
-                  <td>{questions.length}</td>
-                  <td>{textbooks.length}</td>
+                  <td><UpdateCourse setCuz={setCuz} UpdatePdf={UpdatePdf} type={'questions'} id={_id} fil={questions}>{questions.length}</UpdateCourse></td>
+                  <td><UpdateCourse setCuz={setCuz} UpdatePdf={UpdatePdf} type={'textbooks'} id={_id} fil={textbooks}>{textbooks.length}</UpdateCourse> </td>
                 </tr>
               )
             }

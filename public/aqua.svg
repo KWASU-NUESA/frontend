@@ -1,0 +1,16 @@
+<svg width="80" height="82" viewBox="0 0 80 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="80" height="82" rx="20" fill="#259C7F" fill-opacity="0.5"/>
+<circle cx="39.5" cy="40.5" r="28.5" fill="#31D0AA"/>
+<path d="M39 36L41 39L39 42H36L34 39L36 36H39Z" stroke="#EBEBED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M44 33L46 36L44 39H41L39 36L41 33H44Z" stroke="#EBEBED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M44 45L46 48" stroke="#EBEBED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M33 33L36 36" stroke="#EBEBED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M36 42L34 44" stroke="#EBEBED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M41 45L39 47" stroke="#EBEBED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M34 39H32" stroke="#EBEBED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M46 42H49" stroke="#EBEBED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M44 39L46 42L44 45H41L39 42L41 39H44Z" stroke="#EBEBED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="37" cy="49" r="1" fill="#EBEBED"/>
+<circle cx="32" cy="46" r="1" fill="#EBEBED"/>
+<circle cx="49" cy="36" r="1" fill="#EBEBED"/>
+</svg>

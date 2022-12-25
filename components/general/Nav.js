@@ -34,8 +34,7 @@ export default function Nav() {
   
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4} 
-        borderBottom={'1px'}
+      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}
         borderColor="black">
       
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
@@ -71,7 +70,7 @@ export default function Nav() {
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
               {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+                <NavLink key={link} link={link === "Home"? './' : `${link.toLowerCase()}`}>{link}</NavLink>
               ))}
             </Stack>
           </Box>

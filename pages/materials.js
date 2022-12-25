@@ -8,7 +8,7 @@ const Materials = ({mat}) => {
     <div>
       <MatHeader />
       <Meta title="Engineering Materials" />
-      <Pdfs courses={mat}/>
+      <Pdfs courses={mat} />
     </div>
   )
 }
