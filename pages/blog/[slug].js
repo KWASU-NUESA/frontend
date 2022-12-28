@@ -8,16 +8,14 @@ const SampleImageComponent = ({value}) => {
     <img
       src={
         urlFor(value)}
-      alt={value.alt || ' '}
+      alt={'blog image'}
     />
   )
 }
 
 const components = {
   types: {
-    image: SampleImageComponent,
-    // Any other custom types you have in your content
-    // Examples: mapLocation, contactForm, code, featuredProjects, latestNews, etc.
+    image: SampleImageComponent
   },
 }
 const postQuery = '*[_type == "post" && slug.current == $slug][0]'
@@ -26,7 +24,7 @@ const course = ({post}) => {
   return (
     <div className='container row mt-5'>
       <div className="col-md-1"></div>
-      <div className="col-md-8"><PortableText value={post.body || null} components={components} /></div>
+      <div className="col-md-8"><PortableText value={post.body} components={components} /></div>
       <div className="col-md-3"></div>
         
     </div>
