@@ -81,8 +81,10 @@ function Header() {
                 }
               />
             </FormControl>
-            <FormControl w={{ base: '100%', md: '40%' }}>
+            <FormControl w={{ base: '100%', md: '40%' }} color="white">
               <Button
+                color="white"
+                disabled="true"
                 bg={state === 'success' ? 'green' : 'green.700'}
                 isLoading={state === 'submitting'}
                 w="100%"

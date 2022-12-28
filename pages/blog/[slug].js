@@ -1,4 +1,5 @@
 import { PortableText } from "@portabletext/react"
+import Meta from "../../components/general/Meta"
 import { sanityClient } from "../../lib/sanity"
 import {urlFor} from '../../lib/sanity'
 
@@ -23,6 +24,7 @@ const postQuery = '*[_type == "post" && slug.current == $slug][0]'
 const course = ({post}) => {
   return (
     <div className='container row mt-5'>
+      <Meta title={post.title} description={post.description} />
       <div className="col-md-1"></div>
       <div className="col-md-8"><PortableText value={post.body} components={components} /></div>
       <div className="col-md-3"></div>

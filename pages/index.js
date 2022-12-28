@@ -1,4 +1,5 @@
 import { Heading, useColorModeValue, Stack, Button, Text, Tag, Flex } from '@chakra-ui/react'
+import Link from 'next/link'
 import Meta from '../components/general/Meta'
 import LandingHeader from '../components/landing/Header'
 import NewsSlide from '../components/landing/NewsSlide'
@@ -136,7 +137,7 @@ export default function Home({posts}) {
             </Tag>
           </Text>
         </Stack>
-        <Stack><Button>Waitlist</Button></Stack>
+        <Stack><Link href={'/community'}><Button>Waitlist</Button></Link></Stack>
           </Flex>
           
         </div>

@@ -8,6 +8,7 @@ import {
     Image,
     useColorModeValue,
   } from '@chakra-ui/react';
+import Link from 'next/link';
   
   export default function LandingHeader() {
     return (
@@ -43,13 +44,13 @@ import {
                 Welcome to your digital garden.
               </Text>
             </Heading>
-            <Text color={useColorModeValue('gray.500','gray.200') } fontFamily={'cursive'}>
+            <Text color={useColorModeValue('gray.500','gray.200') }>
             Dear NUESite, at NUESA KWASU, our intention is nothing but greatness. Hence, we have built a website to get you closer to human and material resources you will be needing to enhance your success at the faculty.
             </Text> 
             <Stack
               spacing={{ base: 4, sm: 6 }}
               direction={{ base: 'column', sm: 'row' }}>
-              <Button
+              <Link href={'/'}><Button
               color={'white'}
                 rounded={'full'}
                 size={'lg'}
@@ -59,8 +60,8 @@ import {
                 bg={'green.800'}
                 _hover={{ bg: 'green.500' }}>
                 Contact us
-              </Button>
-              <Button
+              </Button></Link>
+              <Link href={'/community'}><Button
               color={'green.500'}
                 rounded={'full'}
                 size={'lg'}
@@ -71,7 +72,7 @@ import {
                 borderColor={'green.500'}
                 _hover={{ bg: 'green.500',color: 'white' }}>
                  Community
-              </Button>
+              </Button></Link> 
               
             </Stack>
           </Stack>

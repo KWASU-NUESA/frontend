@@ -1,5 +1,6 @@
 import { Button, Flex, Heading, Stack, Text } from "@chakra-ui/react"
-import LandingBlog from "./BlogCard"
+import Link from "next/link"
+import LandingBlog from "../general/BlogCard"
 
 const NewsSlide = ({posts}) => {
     const newpost =(posts.reverse()).slice(0,3)
@@ -11,7 +12,7 @@ const NewsSlide = ({posts}) => {
           <Heading size={'lg'}>Read latest News</Heading>
           <Text>Read the latest news from the Nigerian Universities Engineering Students Association Kwasu Chapter.</Text>
         </Stack>
-        <Stack><Button>Waitlist</Button></Stack>
+        <Stack><Link href={'/blog'}><Button>More</Button></Link></Stack>
           </Flex>
     <div className="row">
         {

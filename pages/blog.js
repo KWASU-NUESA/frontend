@@ -6,10 +6,9 @@ import {
   Divider,
   HStack,
   Wrap,
-  WrapItem,
   Container,
 } from '@chakra-ui/react';
-import BlogCard from '../components/blog/BlogCard';
+import BlogCard from '../components/general/BlogCard';
 import { sanityClient, urlFor } from '../lib/sanity';
 import Header from "../components/blog/Header"
 
@@ -67,14 +66,13 @@ const Blog = ({posts}) => {
       </Heading>
       <Divider marginTop="5" />
       <Wrap spacing="30px" marginTop="5">
-        <WrapItem width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>
-          <Box w="100%">
+            <div className="row">
             {posts.map(article => (
-              <BlogCard Author={BlogAuthor} article={article} key={article._id}/>
+              <div className="col-md-4">
+                <BlogCard Author={BlogAuthor} article={article} key={article._id}/>
+              </div>
             ))}
-            
-          </Box>
-        </WrapItem>
+            </div>
       </Wrap>
     </Container>
   );

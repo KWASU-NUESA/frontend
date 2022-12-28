@@ -17,7 +17,7 @@ export default function EachStaff({staff}) {
         my={5}
         mx={[0, 5]}
         overflow={'hidden'}
-        bg="white"
+        bg={useColorModeValue('gray.100','gray.900')}
         border={'1px'}
         borderColor="black"
         boxShadow={useColorModeValue('6px 6px 0 #a6aebb', '6px 6px 0 cyan')}>
@@ -43,7 +43,7 @@ export default function EachStaff({staff}) {
               {staff.type}
             </Text>
           </Box>
-          <Heading color={'black'} fontSize={'lg'} noOfLines={1}>
+          <Heading fontSize={'lg'} noOfLines={1}>
             {staff.stage == "Professor"? "Prof" : staff.stage == "Doctor" ? "Dr" : staff.gender === "Male" ? "Mr" : "Mrs"} {staff.fullname}
           </Heading>
           <Text color={'gray.500'} noOfLines={2}>
