@@ -23,11 +23,10 @@ const components = {
 const postQuery = '*[_type == "post" && slug.current == $slug][0]'
 
 const course = ({post}) => {
-    console.log(post)
   return (
     <div className='container row mt-5'>
       <div className="col-md-1"></div>
-      <div className="col-md-8"><PortableText value={post.body} components={components} /></div>
+      <div className="col-md-8"><PortableText value={post.body || null} components={components} /></div>
       <div className="col-md-3"></div>
         
     </div>
