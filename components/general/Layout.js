@@ -1,5 +1,6 @@
 import Footer from "./Footer"
 import Nav from "./Nav"
+import WhatsApp from "./WhatsApp"
 
 
 const Layout = ({children}) => {
@@ -10,6 +11,7 @@ const Layout = ({children}) => {
           {children}
       </main>
     <Footer />
+    <WhatsApp />
     </>
   )
 }

@@ -6,7 +6,7 @@ const Meta = ({title, description, keywords}) => {
     <Head>
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
-        <link rel="icon" type="image/x-icon" href="nuesalogo.svg"></link>
+        <link rel="icon" type="image/x-icon" href="./nuesalogo.svg"></link>
         <title>{title}</title>
     </Head>
   )

@@ -42,7 +42,7 @@ export const BlogTags = ({tags}) => {
 };
 
 
-export const BlogAuthor= ({img, name, date}) => {
+export const BlogAuthor= ({img, name, date, color}) => {
   return (
     <HStack marginTop="2" spacing="2" display="flex" alignItems="center">
       <Image
@@ -51,14 +51,13 @@ export const BlogAuthor= ({img, name, date}) => {
         src={urlFor(img)}
         alt={`Avatar of ${name}`}
       />
-      <Text fontWeight="medium" color={"black"}>{name}</Text>
+      <Text fontWeight="medium" color={color || "black"}>{name}</Text>
       <Text color={"grey"}>{date}</Text>
     </HStack>
   );
 };
 
 const Blog = ({posts}) => {
-  
   return (
     <Container maxW={'7xl'} p="12">
       <Header />

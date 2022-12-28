@@ -1,10 +1,14 @@
-import { Heading, useColorModeValue, Stack, Button, Text } from '@chakra-ui/react'
+import { Heading, useColorModeValue, Stack, Button, Text, Tag, Flex } from '@chakra-ui/react'
 import Meta from '../components/general/Meta'
 import LandingHeader from '../components/landing/Header'
 import NewsSlide from '../components/landing/NewsSlide'
+import PresidentSection from '../components/landing/PresidentSection'
 import Scroll from '../components/landing/scroll'
+import { sanityClient } from '../lib/sanity'
 
-export default function Home() {
+const postQuery = '*[_type == "post"]{..., author->{name, image}, categories[]->}'
+
+export default function Home({posts}) {
   return (
     <>
       <Meta title='NUESA KWASU Chapter' />
@@ -48,7 +52,7 @@ export default function Home() {
                 colorScheme={'green'}
                 bg={'green.800'}
                 _hover={{ bg: 'green.500', color: 'white' }}>
-                Community
+                About us
               </Button>
               
             </Stack>
@@ -96,7 +100,7 @@ export default function Home() {
                     <img src="blue.svg" alt="" width={'55'} className="mb-3" />
                     <Heading size={'md'} mb={'3'}>We nurture Ballers, not Mechanics</Heading>
                     <Text color= {useColorModeValue('gray.600','gray.300')}>The institution like others, teach the same curriculum to every set every year. 
-                      NUESA comlements this by empowering the studsents with sustainable skills.</Text>
+                      NUESA comlements this by empowering the students with sustainable skills.</Text>
                   </div>
                 </div>
 
@@ -113,11 +117,55 @@ export default function Home() {
           </div>
         </div>
       
-        <NewsSlide />
+        <NewsSlide posts = {posts}/>
+
+        
       
+        </div>
+        <div className="container">
+          <Flex justify={'space-between'} mt={20} mb={10}>
+            <Stack spacing={0} >
+          <Heading size={'lg'}>The NUESA Community</Heading>
+          <Text>Join a Community of creative and intelligent minds. Share resources, gain connections, <br /> Show your creative side and lots more on the NUESA KWASU Community Platform. 
+            <Tag
+              size={'sm'}
+              bg={useColorModeValue('green.300', 'green.800')}
+              ml={2}
+              color={'white'}>
+              Soon!
+            </Tag>
+          </Text>
+        </Stack>
+        <Stack><Button>Waitlist</Button></Stack>
+          </Flex>
+          
+        </div>
+        
+        <div className="row" style={{"padding":0, "margin":0}}>
+          <div className="col-md-3" style={{"padding":0, "margin":0}}>
+            <img src="one.png" alt="" width={'100%'} />
+          </div>
+          <div className="col-md-3" style={{"padding":0, "margin":0}}>
+            <img src="two.png" alt="" width='100%' />
+          </div>
+          <div className="col-md-3" style={{"padding":0, "margin":0}}>
+            <img src="three.png" alt="" width='100%' />
+          </div>
+          <div className="col-md-3" style={{"padding":0, "margin":0}}>
+            <img src="four.png" alt="" width='100%' />
+          </div>
+        </div>
+        <div className="container">
+          <PresidentSection />
         </div>
     </>
   )
 }
+
+export const getStaticProps = async() => {
+  const posts = await sanityClient.fetch(postQuery)
+  return {props: {posts}}
+}
+
 
 

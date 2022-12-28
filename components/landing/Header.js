@@ -2,14 +2,10 @@ import {
     Container,
     Stack,
     Flex,
-    Box,
     Heading,
     Text,
     Button,
     Image,
-    Icon,
-    IconButton,
-    createIcon,
     useColorModeValue,
   } from '@chakra-ui/react';
   
@@ -36,8 +32,9 @@ import {
                   position: 'absolute',
                   bottom: 1,
                   left: 0,
-                  bg: 'green.400',
+                  bg: 'green.500',
                   zIndex: -1,
+                  borderRadius:'50px'
                 }}>
                 Hello NUESite,
               </Text>

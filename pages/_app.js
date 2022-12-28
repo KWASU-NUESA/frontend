@@ -10,6 +10,7 @@ import "aos/dist/aos.css"
 import Aos from 'aos'
 
 
+
 function MyApp({ Component, pageProps }){
   useEffect(()=>{
     import("bootstrap/dist/js/bootstrap");

@@ -17,16 +17,14 @@ const Scroll = () => {
             <h1>
                 <Link href="https://kwasu.edu.ng">KWARA STATE UNIVERSITY, MALETE</Link> <img src="kwasu.svg" alt="ok" height="40px" width="40px" /> &nbsp;
             </h1>
-  
             <h1>
                 <Link href="https://kwasu.edu.ng">https://www.Kwasu.edu.nd</Link> <img src="kwasu.svg" alt="ok" height="40px" width="40px" /> &nbsp;
             </h1>
-            <h1>
-                <Link href="https://kwasu.edu.ng">https://www.Kwasu.edu.nd</Link> <img src="kwasu.svg" alt="ok" height="40px" width="40px" /> &nbsp;
-            </h1>
-             
             <h1>
                 <Link href="https:kwasu.edu.ng">KWARA STATE UNIVERSITY, MALETE</Link> <img src="kwasu.svg" alt="ok" height="40px" width="40px" /> &nbsp;
+            </h1>
+            <h1>
+                <Link href="https://kwasu.edu.ng">https://www.Kwasu.edu.nd</Link> <img src="kwasu.svg" alt="ok" height="40px" width="40px" /> &nbsp;
             </h1>
             </div>
             

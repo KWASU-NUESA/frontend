@@ -25,9 +25,8 @@ export default function Card({course}) {
         my={5}
         mx={[0, 5]}
         overflow={'hidden'}
-        bg="white"
+        bg={useColorModeValue('gray.100','gray.900')}
         border={'1px'}
-        borderColor="black"
         boxShadow={useColorModeValue('6px 6px 0 #a6aebb', '6px 6px 0 cyan')}>
         
         <Box p={4}>
@@ -42,14 +41,14 @@ export default function Card({course}) {
               {courseCode}
             </Text>
           </Box>
-          <Heading color={'black'} fontSize={'xl'} noOfLines={2}>
+          <Heading fontSize={'xl'} noOfLines={2}>
             {courseName}
           </Heading>
           <Text color={'gray.500'} noOfLines={2}>
             {`${semester} semester course for ${department.toLowerCase() === 'general' ? 'all' : department} ${level} level student.`}
           </Text>
         </Box>
-        <HStack borderTop={'1px'} color="black">
+        <HStack borderTop={'1px'}>
           <Flex
             p={4}
             alignItems="center"

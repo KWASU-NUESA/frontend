@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import {
   Box,
   Heading,
@@ -12,6 +11,7 @@ import {
   Flex
 } from '@chakra-ui/react';
 import { useState } from 'react';
+import Meta from '../general/Meta';
 
 export default function Header() {
     const [email, setEmail] = useState("")
@@ -19,13 +19,7 @@ export default function Header() {
     const [error, setError] = useState("")
   return (
     <>
-      <Head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
-
+      <Meta title="NUESA KWASU | Blog" />
       <Container maxW={'3xl'}>
         <Stack
           as={Box}
@@ -89,7 +83,7 @@ export default function Header() {
           </FormControl>
           <FormControl w={{ base: '100%', md: '40%' }}>
             <Button
-              colorScheme={state === 'success' ? 'green' : 'blue'}
+              bg={state === 'success' ? 'green' : 'green.700'}
               isLoading={state === 'submitting'}
               w="100%"
               type={state === 'success' ? 'button' : 'submit'}>

@@ -44,25 +44,24 @@ import {
                   Soon!
                 </Tag>
               </Stack>
-              <Link href={'#'}>Waitlist</Link>
-              <Link href={'#'}>Terms and conditions</Link>
-              <Link href={'#'}>Programs</Link>
+              <Link href={'/community'}>Waitlist</Link>
+              <Link href={'/community'}>Terms and conditions</Link>
+              <Link href={'/community'}>Programs</Link>
             </Stack>
             <Stack align={'flex-start'}>
               <ListHeader>Organization</ListHeader>
-              <Link href={'#'}>About Us</Link>
-              <Link href={'#'}>Press</Link>
-              <Link href={'#'}>Parent</Link>
+              <Link href={'/about'}>About Us</Link>
+              <Link href={'/blog'}>Blog</Link>
+              <Link href={'https://www.nuesanational.org.ng'}>Parent</Link>
               <Link href={'#'}>Contact Us</Link>
               <Link href={'#'}>Partners</Link>
             </Stack>
             <Stack align={'flex-start'}>
-              <ListHeader>Legal</ListHeader>
-              <Link href={'#'}>Cookies Policy</Link>
-              <Link href={'#'}>Privacy Policy</Link>
-              <Link href={'#'}>Terms of Service</Link>
-              <Link href={'#'}>Law Enforcement</Link>
-              <Link href={'#'}>Status</Link>
+              <ListHeader>Services and Legal</ListHeader>
+              <Link href={'/materials'}>Material Resources</Link>
+              <Link href={'/staff'}>Staff Data</Link>
+              <Link href={'/termsandconditions'}>Terms of Use of Service</Link>
+              <Link href={'/termsandconditions'}>T&C</Link>
             </Stack>
             <Stack align={'flex-start'}>
             <ListHeader>Stay up to date</ListHeader>
@@ -109,7 +108,7 @@ import {
               <img src="logos.svg" alt="" />
           </Flex>
           <Text pt={6} fontSize={'sm'} textAlign={'center'}>
-            © {new Date().getFullYear()} Powered by <Link href='/' color={useColorModeValue('green.400','green.800')}>NDT</Link>.
+            © {new Date().getFullYear()} Powered by <Link href='/ndt' color={useColorModeValue('green.400','green.800')}>NDT</Link>.
           </Text>
         </Box>
       </Box>

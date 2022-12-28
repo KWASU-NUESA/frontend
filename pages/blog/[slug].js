@@ -6,7 +6,6 @@ import {urlFor} from '../../lib/sanity'
 const SampleImageComponent = ({value}) => {
   return (
     <img
-    
       src={
         urlFor(value)}
       alt={value.alt || ' '}
@@ -26,9 +25,11 @@ const postQuery = '*[_type == "post" && slug.current == $slug][0]'
 const course = ({post}) => {
     console.log(post)
   return (
-    <div className='container mt-5'>
+    <div className='container row mt-5'>
+      <div className="col-md-1"></div>
+      <div className="col-md-8"><PortableText value={post.body} components={components} /></div>
+      <div className="col-md-3"></div>
         
-        <PortableText value={post.body} components={components} />
     </div>
   )
 }

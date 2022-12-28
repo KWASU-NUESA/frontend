@@ -25,11 +25,9 @@ export default function BlogCard({article}) {
         my={5}
         mx={[0, 5]}
         overflow={'hidden'}
-        bg="white"
-        border={'1px'}
-        borderColor="black"
-        boxShadow={useColorModeValue('6px 6px 0 #a6aebb', '6px 6px 0 cyan')}>
-        <Box h={'200px'} borderBottom={'1px'} borderColor="black">
+        borderRadius={15}
+        bg={useColorModeValue('gray.100', 'gray.900')}>
+        <Box h={'200px'}  borderColor="black">
           <Img
             src={
               urlFor(article.mainImage)
@@ -43,15 +41,15 @@ export default function BlogCard({article}) {
         </Box>
         <Box p={4}>
           <BlogTags tags={["Engineering","Latest"]} />
-          <Heading color={'black'} fontSize={'xl'} noOfLines={1}>
+          <Heading fontSize={'xl'} noOfLines={1}>
             {article.title}
           </Heading>
           <Text color={'gray.500'} noOfLines={2}>
             {article.intro}
           </Text>
-          <BlogAuthor name={article.author.name} date={article.publishedAt.split("T")[0]} img={article.author.image} />
+          <BlogAuthor name={article.author.name} date={article.publishedAt.split("T")[0]} img={article.author.image} color={useColorModeValue("black","white")} />
         </Box>
-        <HStack borderTop={'1px'} color="black">
+        <HStack>
           <Flex
             p={4}
             alignItems="center"
@@ -65,20 +63,7 @@ export default function BlogCard({article}) {
             </Text></Link>
             <Link href={`/blog/${article.slug.current}`}><BsArrowUpRight /></Link>
           </Flex>
-          <Flex
-            p={4}
-            alignItems="center"
-            justifyContent={'space-between'}
-            roundedBottom={'sm'}
-            borderLeft={'1px'}
-            cursor="pointer"
-            onClick={() => setLiked(!liked)}>
-            {liked ? (
-              <BsHeartFill fill="red" fontSize={'24px'} />
-            ) : (
-              <BsHeart fontSize={'24px'} />
-            )}
-          </Flex>
+          
         </HStack>
       </Box>
     </Center>

@@ -1,23 +1,30 @@
-import React from 'react'
-import { sanityClient } from '../../lib/sanity'
+import { Button, Flex, Heading, Stack, Text } from "@chakra-ui/react"
+import LandingBlog from "./BlogCard"
 
-const postQuery = '*[_type == "post"]{..., author->{name, image}, categories[]->}'
 const NewsSlide = ({posts}) => {
-    const newpost = posts.slice(0,3)
+    const newpost = posts.slice(0,2)
+   
   return (
-    <div>
+    <div className="mt-5 pt-5">
+    <Flex justify={'space-between'} mt={10}>
+            <Stack spacing={0} >
+          <Heading size={'lg'}>Read latest News</Heading>
+          <Text>Read the latest news from the Nigerian Universities Engineering Students Association Kwasu Chapter.</Text>
+        </Stack>
+        <Stack><Button>Waitlist</Button></Stack>
+          </Flex>
+    <div className="row">
         {
             newpost.map(post => (
-                <BlogCard article={post} />
+              <div className="col-md-4">
+                <LandingBlog article={post} />
+              </div>
             ))
         }
+    </div>
     </div>
   )
 }
 
-export default NewsSlide
 
-export const getStaticProps = async() => {
-    const posts = await sanityClient.fetch(postQuery)
-  return {props: {posts}}
-}
+export default NewsSlide
