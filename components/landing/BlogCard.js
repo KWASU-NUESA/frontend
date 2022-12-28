@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {
   Box,
   Heading,
@@ -10,12 +9,11 @@ import {
   useColorModeValue,
   HStack,
 } from '@chakra-ui/react';
-import { BsArrowUpRight, BsHeartFill, BsHeart } from 'react-icons/bs';
+import { BsArrowUpRight } from 'react-icons/bs';
 import { BlogAuthor, BlogTags } from '../../pages/blog';
 import { urlFor } from '../../lib/sanity';
 
 export default function BlogCard({article}) {
-  const [liked, setLiked] = useState(false);
 
   return (
     <Center py={6}>
@@ -40,7 +38,7 @@ export default function BlogCard({article}) {
           />
         </Box>
         <Box p={4}>
-          <BlogTags tags={["Engineering","Latest"]} />
+          <BlogTags tags={article.categories} />
           <Heading fontSize={'xl'} noOfLines={1}>
             {article.title}
           </Heading>

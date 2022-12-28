@@ -2,7 +2,7 @@ import { Button, Flex, Heading, Stack, Text } from "@chakra-ui/react"
 import LandingBlog from "./BlogCard"
 
 const NewsSlide = ({posts}) => {
-    const newpost = posts.slice(0,2)
+    const newpost =(posts.reverse()).slice(0,3)
    
   return (
     <div className="mt-5 pt-5">

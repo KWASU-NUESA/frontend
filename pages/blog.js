@@ -28,11 +28,11 @@ export const BlogTags = ({tags}) => {
             py={1}
             color="white"
             mb={2}
-            key={tag}
+            key={tag.title}
             marginRight={2}
             >
             <Text fontSize={'xs'} fontWeight="medium">
-              {tag}
+              {tag.title}
             </Text>
           </Box>
         );
