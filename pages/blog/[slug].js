@@ -47,7 +47,7 @@ export const getStaticPaths = async () => {
     const paths = await sanityClient.fetch('*[_type == "post" && defined(slug.current)]{"params":{"slug":slug.current}}')
     return {
         paths,
-        fallback:true
+        fallback:false
     }
 }
 
