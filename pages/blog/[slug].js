@@ -24,7 +24,7 @@ const postQuery = '*[_type == "post" && slug.current == $slug][0]'
 const course = ({post}) => {
   return (
     <div className='container row mt-5'>
-      <Meta title={post.title} description={post.description} />
+      <Meta title={post.title} description={post.desc} />
       <div className="col-md-1"></div>
       <div className="col-md-8"><PortableText value={post.body} components={components} /></div>
       <div className="col-md-3"></div>
